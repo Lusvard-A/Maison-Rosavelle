@@ -48,7 +48,7 @@ body {
     font-size: 18px;
     line-height: 1.7;
     color: var(--ink);
-    background: var(--beige);
+    background: var(--black);
     overflow-x: hidden;
 }
 
@@ -100,7 +100,6 @@ h1, h2, h3, h4 {
     100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Scroll reveal */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -117,10 +116,10 @@ h1, h2, h3, h4 {
 nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    background: rgba(247, 239, 220, 0.92);
+    background: rgba(10, 10, 10, 0.92);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+    border-bottom: 1px solid rgba(232, 212, 160, 0.2);
     z-index: 1000;
     padding: 1.1rem 0;
     animation: fadeIn 1.5s ease 0.5s both;
@@ -138,12 +137,12 @@ nav .container {
 nav .logo {
     font-family: 'Pinyon Script', cursive;
     font-size: 2rem;
-    color: var(--black);
+    color: var(--champagne);
     text-decoration: none;
     line-height: 1;
 }
 
-nav .logo span { color: var(--gold-dark); }
+nav .logo span { color: var(--gold); }
 
 nav ul {
     list-style: none;
@@ -154,7 +153,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--ink);
+    color: var(--beige);
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.95rem;
     font-weight: 500;
@@ -169,12 +168,12 @@ nav ul li a::after {
     position: absolute;
     bottom: -6px; left: 50%;
     width: 0; height: 1px;
-    background: var(--gold-dark);
+    background: var(--gold);
     transition: var(--transition);
     transform: translateX(-50%);
 }
 
-nav ul li a:hover { color: var(--gold-dark); }
+nav ul li a:hover { color: var(--champagne); }
 nav ul li a:hover::after { width: 100%; }
 
 .nav-social {
@@ -182,7 +181,7 @@ nav ul li a:hover::after { width: 100%; }
     gap: 0.75rem;
     margin-left: 1rem;
     padding-left: 1rem;
-    border-left: 1px solid rgba(26, 26, 26, 0.15);
+    border-left: 1px solid rgba(232, 212, 160, 0.2);
 }
 
 .nav-social a {
@@ -190,17 +189,17 @@ nav ul li a:hover::after { width: 100%; }
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--black);
-    border: 1px solid rgba(26, 26, 26, 0.2);
+    color: var(--champagne);
+    border: 1px solid rgba(232, 212, 160, 0.3);
     border-radius: 50%;
     transition: var(--transition);
 }
 
 .nav-social a:hover {
-    background: var(--black);
-    color: var(--champagne);
+    background: var(--champagne);
+    color: var(--black);
     transform: translateY(-2px);
-    border-color: var(--black);
+    border-color: var(--champagne);
 }
 
 .nav-social svg { width: 15px; height: 15px; }
@@ -218,18 +217,17 @@ nav ul li a:hover::after { width: 100%; }
     background: var(--black);
 }
 
-/* Background image with Ken Burns */
+/* NEW HERO BACKGROUND */
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('yovanka-loria-salon-iBw_pFVbTXw-unsplash.jpg');
+    background-image: url('sunriseforever-beauty-salon-4043096_1920.jpg');
     background-size: cover;
     background-position: center;
     animation: heroReveal 2.5s ease-out forwards, kenBurns 20s ease-in-out infinite 2.5s;
     filter: brightness(0.55) contrast(1.1);
 }
 
-/* Dark gradient overlay */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -238,7 +236,6 @@ nav ul li a:hover::after { width: 100%; }
         linear-gradient(180deg, rgba(10, 10, 10, 0.4) 0%, rgba(10, 10, 10, 0.6) 100%);
 }
 
-/* Ornamental frame */
 .hero-frame {
     position: absolute;
     inset: 40px;
@@ -425,7 +422,6 @@ nav ul li a:hover::after { width: 100%; }
     opacity: 1;
 }
 
-/* Scroll indicator */
 .scroll-indicator {
     position: absolute;
     bottom: 40px;
@@ -494,7 +490,6 @@ section {
     margin: 0 auto;
 }
 
-/* Filigree divider */
 .filigree {
     display: flex;
     align-items: center;
@@ -518,13 +513,107 @@ section {
 }
 
 /* ============================================
-   THE ATELIER (About)
+   FRAMED LIGHT SECTIONS — Black ramka around beige content
    ============================================ */
-.atelier {
+.framed-section {
+    position: relative;
+    background: var(--beige);
+    padding: 7rem 2rem;
+    margin: 0;
+}
+
+.framed-section .frame-container {
+    position: relative;
+    max-width: 1320px;
+    margin: 0 auto;
     background: var(--beige-soft);
+    padding: 5rem 3rem;
+    border: 1px solid var(--black);
+    box-shadow:
+        0 0 0 8px var(--beige),
+        0 0 0 9px var(--black),
+        0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* Black corner ornaments */
+.framed-section .frame-container::before,
+.framed-section .frame-container::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--black);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.framed-section .frame-container::before {
+    top: 15px;
+    left: 15px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.framed-section .frame-container::after {
+    bottom: 15px;
+    right: 15px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Additional corner ornaments via inner wrapper */
+.frame-corners {
     position: relative;
 }
 
+.frame-corners::before,
+.frame-corners::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--black);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.frame-corners::before {
+    top: 15px;
+    right: 15px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.frame-corners::after {
+    bottom: 15px;
+    left: 15px;
+    border-right: none;
+    border-top: none;
+}
+
+/* Decorative black corner flourishes (SVG-like) */
+.corner-ornament {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.corner-ornament svg {
+    width: 100%;
+    height: 100%;
+    color: var(--black);
+}
+
+.corner-ornament.top-left { top: 5px; left: 5px; }
+.corner-ornament.top-right { top: 5px; right: 5px; transform: scaleX(-1); }
+.corner-ornament.bottom-left { bottom: 5px; left: 5px; transform: scaleY(-1); }
+.corner-ornament.bottom-right { bottom: 5px; right: 5px; transform: scale(-1, -1); }
+
+/* ============================================
+   THE ATELIER (About)
+   ============================================ */
 .atelier-grid {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -600,40 +689,35 @@ section {
 }
 
 /* ============================================
-   SERVICES — Editorial layout with photos
+   SERVICES — Editorial layout
    ============================================ */
 .services-intro {
-    background: var(--beige);
     text-align: center;
-    padding: 6rem 2rem 4rem;
 }
 
 .services-intro .section-title {
     font-size: 3.5rem;
 }
 
-/* Service category — editorial layout */
 .service-section {
-    padding: 6rem 2rem;
+    padding: 5rem 0;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.1);
 }
 
-.service-section:nth-child(even) {
-    background: var(--beige-soft);
-}
-
-.service-section:nth-child(odd) {
-    background: var(--beige);
+.service-section:last-child {
+    border-bottom: none;
 }
 
 .service-editorial {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: center;
+    padding: 0 2rem;
 }
 
 .service-section:nth-child(even) .service-editorial {
@@ -644,7 +728,6 @@ section {
     direction: ltr;
 }
 
-/* Image side — editorial movement */
 .service-image-wrap {
     position: relative;
     aspect-ratio: 4/5;
@@ -672,7 +755,6 @@ section {
     transform: scale(1.08);
 }
 
-/* Image number label */
 .service-image-wrap .number {
     position: absolute;
     top: 25px;
@@ -698,7 +780,6 @@ section {
     text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
-/* Text side */
 .service-text .service-eyebrow {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -732,7 +813,6 @@ section {
     font-style: italic;
 }
 
-/* Service list */
 .service-list {
     list-style: none;
     border-top: 1px solid rgba(26, 26, 26, 0.15);
@@ -776,26 +856,8 @@ section {
 }
 
 /* ============================================
-   BOOKING — Refined interaction
+   BOOKING
    ============================================ */
-.booking {
-    background:
-        linear-gradient(180deg, var(--beige-soft) 0%, var(--beige-warm) 100%);
-    position: relative;
-}
-
-.booking::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><g fill='none' stroke='%23141414' stroke-width='0.3' opacity='0.08'><circle cx='200' cy='200' r='100'/><circle cx='200' cy='200' r='150'/><circle cx='200' cy='200' r='200'/><path d='M200,50 L200,350 M50,200 L350,200'/></g></svg>");
-    background-size: 400px;
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.booking .section-container { position: relative; z-index: 1; }
-
 .booking-layout {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
@@ -804,18 +866,14 @@ section {
     margin-top: 3rem;
 }
 
-/* Booking form */
 .booking-form {
-    background: var(--beige-soft);
-    border: 1px solid rgba(26, 26, 26, 0.1);
+    background: var(--cream);
+    border: 1px solid var(--black);
     padding: 3rem;
     box-shadow: var(--shadow-soft);
 }
 
-.form-section {
-    margin-bottom: 2.5rem;
-}
-
+.form-section { margin-bottom: 2.5rem; }
 .form-section:last-child { margin-bottom: 0; }
 
 .form-section h4 {
@@ -853,7 +911,7 @@ section {
 .form-field textarea {
     padding: 0.85rem 1rem;
     border: 1px solid rgba(26, 26, 26, 0.2);
-    background: var(--cream);
+    background: var(--beige-soft);
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
     color: var(--black);
@@ -872,10 +930,8 @@ section {
 .form-field textarea {
     resize: vertical;
     min-height: 80px;
-    font-family: 'Cormorant Garamond', serif;
 }
 
-/* Time slots */
 .time-slots {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -886,7 +942,7 @@ section {
 .time-slot {
     padding: 0.75rem;
     border: 1px solid rgba(26, 26, 26, 0.2);
-    background: var(--cream);
+    background: var(--beige-soft);
     text-align: center;
     font-family: 'Playfair Display', serif;
     font-size: 0.95rem;
@@ -912,7 +968,6 @@ section {
     text-decoration: line-through;
 }
 
-/* Summary panel */
 .booking-summary {
     background: var(--black);
     color: var(--beige);
@@ -1051,10 +1106,6 @@ section {
 /* ============================================
    TEAM — Horizontal line
    ============================================ */
-.artists {
-    background: var(--beige);
-}
-
 .artists-line {
     display: flex;
     flex-wrap: wrap;
@@ -1087,6 +1138,7 @@ section {
         0 0 0 3px var(--gold-dark),
         var(--shadow-deep);
     transition: var(--transition);
+    background: var(--beige-deep);
 }
 
 .cameo::before {
@@ -1112,7 +1164,7 @@ section {
         0 15px 40px rgba(212, 175, 55, 0.3);
 }
 
-.cameo img {
+.cameo img, .cameo svg {
     width: 100%; height: 100%;
     object-fit: cover;
     transition: var(--transition);
@@ -1148,10 +1200,6 @@ section {
 /* ============================================
    GALLERY — Editorial movement
    ============================================ */
-.gallery {
-    background: var(--beige-soft);
-}
-
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1163,7 +1211,7 @@ section {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    border: 1px solid rgba(26, 26, 26, 0.15);
+    border: 1px solid var(--black);
     transition: var(--transition);
 }
 
@@ -1203,6 +1251,7 @@ section {
     opacity: 0;
     transform: translateY(10px);
     transition: var(--transition);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
 .gallery-item:hover .gallery-caption {
@@ -1213,10 +1262,6 @@ section {
 /* ============================================
    TESTIMONIALS
    ============================================ */
-.testimonials {
-    background: var(--beige);
-}
-
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1224,10 +1269,10 @@ section {
 }
 
 .note {
-    background: var(--beige-soft);
+    background: var(--cream);
     padding: 2.5rem 2rem 2rem;
     position: relative;
-    border: 1px solid rgba(26, 26, 26, 0.1);
+    border: 1px solid var(--black);
     transition: var(--transition);
 }
 
@@ -1441,9 +1486,7 @@ footer {
     animation: fadeIn 0.3s ease;
 }
 
-.modal-overlay.active {
-    display: flex;
-}
+.modal-overlay.active { display: flex; }
 
 .modal {
     background: var(--beige-soft);
@@ -1524,6 +1567,7 @@ footer {
     .gallery-item:nth-child(1),
     .gallery-item:nth-child(6),
     .gallery-item:nth-child(9) { grid-column: span 1; grid-row: span 1; }
+    .framed-section .frame-container { padding: 3rem 1.5rem; }
 }
 
 @media (max-width: 768px) {
@@ -1531,7 +1575,9 @@ footer {
     .nav-social { margin-left: auto; padding-left: 0; border: none; }
     .hero h1 { font-size: 4.5rem; }
     .hero { padding: 6rem 1rem 3rem; }
-    section { padding: 5rem 1.5rem; }
+    section { padding: 5rem 1rem; }
+    .framed-section { padding: 4rem 1rem; }
+    .framed-section .frame-container { padding: 2.5rem 1rem; }
     .section-title { font-size: 2.2rem; }
     .booking-info { grid-template-columns: 1fr; }
     .booking-form { padding: 2rem 1.5rem; }
@@ -1543,6 +1589,7 @@ footer {
     .cameo { width: 130px; height: 130px; }
     .service-text h3 { font-size: 2rem; }
     .hero-frame { inset: 20px; }
+    .corner-ornament { width: 50px; height: 50px; }
 }
 </style>
 </head>
@@ -1579,7 +1626,7 @@ footer {
 </nav>
 
 <!-- ============================================
-     HERO — Cinematic Reveal
+     HERO — Cinematic Reveal (NEW PHOTO)
      ============================================ -->
 <section class="hero">
     <div class="hero-bg"></div>
@@ -1601,490 +1648,564 @@ footer {
 </section>
 
 <!-- ============================================
-     THE ATELIER (About)
+     THE ATELIER — Framed light section with black ramka
      ============================================ -->
-<section class="atelier reveal" id="atelier">
-    <div class="section-container">
-        <div class="section-header">
-            <span class="section-eyebrow">Benvenuti, cari</span>
-            <h2 class="section-title">The Atelier</h2>
-            <div class="filigree">
-                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-                    <path d="M20,5 Q30,15 20,20 Q10,15 20,5 M20,35 Q30,25 20,20 Q10,25 20,35 M5,20 Q15,10 20,20 Q15,30 5,20 M35,20 Q25,10 20,20 Q25,30 35,20"/>
-                    <circle cx="20" cy="20" r="2" fill="currentColor"/>
-                </svg>
-            </div>
-        </div>
+<div class="framed-section reveal" id="atelier">
+    <div class="frame-container">
+        <div class="frame-corners">
+            <!-- Corner ornaments -->
+            <span class="corner-ornament top-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament top-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
 
-        <div class="atelier-grid">
-            <div class="atelier-image">
-                <img src="pexels-leeloothefirst-4677849.jpg" alt="Maison Rosavelle interior" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
-            </div>
-            <div class="atelier-text">
-                <span class="script-title">Una piccola storia...</span>
-                <h2>Where beauty becomes <em>art</em>.</h2>
-                <p>
-                    Nestled in the heart of Milano, Maison Rosavelle has welcomed distinguished ladies and gentlemen 
-                    for over four decades. Our atelier is a sanctuary — velvet chairs, gilded mirrors, and the soft 
-                    scent of rosewater lingering in the air.
-                </p>
-                <p>
-                    Here, every treatment is a ritual. Every client, a muse. We believe beauty is not made in haste, 
-                    but coaxed slowly — like a sonnet, like a symphony, like a perfectly tailored suit from the 
-                    Quadrilatero della Moda.
-                </p>
-                <p style="color: var(--gold-dark); font-style: italic; font-size: 1.2rem;">
-                    "One does not simply visit Maison Rosavelle. One <em>arrives</em>."
-                </p>
-                <div class="signature">— Rosavelle, Fondatrice</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     SERVICES INTRO
-     ============================================ -->
-<section class="services-intro reveal" id="services">
-    <div class="section-container">
-        <span class="section-eyebrow">I nostri servizi</span>
-        <h2 class="section-title">Services &amp; Tariff</h2>
-        <p class="section-subtitle">Six rituals of beauty — each one a small ceremony, performed with devotion.</p>
-        <div class="filigree">
-            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M20,5 Q30,15 20,20 Q10,15 20,5 M20,35 Q30,25 20,20 Q10,25 20,35"/>
-                <circle cx="20" cy="20" r="2" fill="currentColor"/>
-            </svg>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     1. HAIR — Capelli Donna
-     ============================================ -->
-<section class="service-section reveal">
-    <div class="service-editorial">
-        <div class="service-image-wrap">
-            <img src="pexels-alinaskazka-15507420.jpg" alt="Hair services" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
-            <span class="number">01</span>
-            <span class="category-label">Capelli</span>
-        </div>
-        <div class="service-text">
-            <span class="service-eyebrow">— Chapter One</span>
-            <h3>Women's Hair</h3>
-            <span class="it-name">Capelli Donna</span>
-            <p class="description">From the first snip of the scissors to the final sweep of the brush, our hair rituals are performed with the patience of artisans and the eye of poets.</p>
-            <ul class="service-list">
-                <li><span class="name">Women's haircut <span class="it">— Taglio donna</span></span><span class="price">€35</span></li>
-                <li><span class="name">Wash &amp; blow-dry <span class="it">— Shampoo e piega</span></span><span class="price">€25</span></li>
-                <li><span class="name">Curls / waves styling <span class="it">— Acconciatura onde</span></span><span class="price">€40</span></li>
-                <li><span class="name">Root coloring <span class="it">— Colore ricrescita</span></span><span class="price">€40</span></li>
-                <li><span class="name">Full hair coloring <span class="it">— Colore completo</span></span><span class="price">€65</span></li>
-                <li><span class="name">Balayage <span class="it">— Balayage</span></span><span class="price">€120</span></li>
-                <li><span class="name">Deep conditioning <span class="it">— Maschera ristrutturante</span></span><span class="price">€20</span></li>
-                <li><span class="name">Bond repair <span class="it">— Trattamento ricostruzione</span></span><span class="price">€40</span></li>
-                <li><span class="name">Keratin smoothing <span class="it">— Cheratina</span></span><span class="price">€180</span></li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     2. MAKEUP
-     ============================================ -->
-<section class="service-section reveal">
-    <div class="service-editorial">
-        <div class="service-image-wrap">
-            <img src="farhad-ibrahimzade-V2HDOQTJh3o-unsplash.jpg" alt="Makeup services" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
-            <span class="number">02</span>
-            <span class="category-label">Make-up</span>
-        </div>
-        <div class="service-text">
-            <span class="service-eyebrow">— Chapter Two</span>
-            <h3>Make-up</h3>
-            <span class="it-name">L'Arte del Trucco</span>
-            <p class="description">A brush, a palette, and the quiet confidence of a woman about to step into her own story. Our artists paint with light, shadow, and a little bit of magic.</p>
-            <ul class="service-list">
-                <li><span class="name">Day makeup <span class="it">— Trucco giorno</span></span><span class="price">€40</span></li>
-                <li><span class="name">Evening makeup <span class="it">— Trucco sera</span></span><span class="price">€60</span></li>
-                <li><span class="name">Bridal makeup <span class="it">— Trucco sposa</span></span><span class="price">€180</span></li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     3. NAILS
-     ============================================ -->
-<section class="service-section reveal">
-    <div class="service-editorial">
-        <div class="service-image-wrap">
-            <img src="pexels-ron-lach-10317443.jpg" alt="Nail services" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
-            <span class="number">03</span>
-            <span class="category-label">Unghie</span>
-        </div>
-        <div class="service-text">
-            <span class="service-eyebrow">— Chapter Three</span>
-            <h3>Nails</h3>
-            <span class="it-name">Unghie</span>
-            <p class="description">Tiny canvases, steady hands, and the most delicate finishes. Our nail artists treat each fingertip as a small work of art — because, in a way, it is.</p>
-            <ul class="service-list">
-                <li><span class="name">Classic manicure <span class="it">— Manicure classica</span></span><span class="price">€20</span></li>
-                <li><span class="name">Semi-permanent manicure <span class="it">— Semipermanente</span></span><span class="price">€35</span></li>
-                <li><span class="name">Gel nail extensions <span class="it">— Ricostruzione in gel</span></span><span class="price">€65</span></li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     4. BROWS & LASHES
-     ============================================ -->
-<section class="service-section reveal">
-    <div class="service-editorial">
-        <div class="service-image-wrap">
-            <img src="kimia-kazemi-RbIcMsh0NSk-unsplash.jpg" alt="Brows and lashes" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
-            <span class="number">04</span>
-            <span class="category-label">Sopracciglia</span>
-        </div>
-        <div class="service-text">
-            <span class="service-eyebrow">— Chapter Four</span>
-            <h3>Eyebrows &amp; Eyelashes</h3>
-            <span class="it-name">Sopracciglia e Ciglia</span>
-            <p class="description">The frame of the face, the flutter of a glance — these small details speak volumes. We shape, lift, and define with the precision of a calligrapher.</p>
-            <ul class="service-list">
-                <li><span class="name">Eyebrow shaping <span class="it">— Forma sopracciglia</span></span><span class="price">€15</span></li>
-                <li><span class="name">Brow lamination <span class="it">— Laminazione sopracciglia</span></span><span class="price">€50</span></li>
-                <li><span class="name">Lash lift <span class="it">— Laminazione ciglia</span></span><span class="price">€50</span></li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     5. FACIAL SKINCARE
-     ============================================ -->
-<section class="service-section reveal">
-    <div class="service-editorial">
-        <div class="service-image-wrap">
-            <img src="engin-akyurt-SMwCQZWayj0-unsplash.jpg" alt="Facial skincare" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
-            <span class="number">05</span>
-            <span class="category-label">Viso</span>
-        </div>
-        <div class="service-text">
-            <span class="service-eyebrow">— Chapter Five</span>
-            <h3>Facial Skincare</h3>
-            <span class="it-name">Trattamenti Viso</span>
-            <p class="description">A ritual as old as the Renaissance itself — cleanse, nourish, restore. Our facials are whispered to turn back time by a decade. Perhaps two.</p>
-            <ul class="service-list">
-                <li><span class="name">Deep facial cleansing <span class="it">— Pulizia viso profonda</span></span><span class="price">€55</span></li>
-                <li><span class="name">Hydrating facial <span class="it">— Trattamento idratante</span></span><span class="price">€60</span></li>
-                <li><span class="name">Anti-aging facial <span class="it">— Trattamento anti-età</span></span><span class="price">€85</span></li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     6. MASSAGE & BODY
-     ============================================ -->
-<section class="service-section reveal">
-    <div class="service-editorial">
-        <div class="service-image-wrap">
-            <img src="ionela-mat-lps3FolQ6Ro-unsplash.jpg" alt="Massage and body" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
-            <span class="number">06</span>
-            <span class="category-label">Corpo</span>
-        </div>
-        <div class="service-text">
-            <span class="service-eyebrow">— Chapter Six</span>
-            <h3>Massage &amp; Body</h3>
-            <span class="it-name">Massaggi e Corpo</span>
-            <p class="description">The body remembers. Let our therapists release what the day has stored — tension, fatigue, the quiet weight of being. You will leave lighter.</p>
-            <ul class="service-list">
-                <li><span class="name">Relaxation massage, 30 min <span class="it">— Massaggio rilassante</span></span><span class="price">€40</span></li>
-                <li><span class="name">Full-body massage, 60 min <span class="it">— Massaggio completo</span></span><span class="price">€70</span></li>
-                <li><span class="name">Body scrub <span class="it">— Scrub corpo</span></span><span class="price">€45</span></li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     MEET THE ARTISTS
-     ============================================ -->
-<section class="artists reveal" id="artists">
-    <div class="section-container">
-        <div class="section-header">
-            <span class="section-eyebrow">I nostri artisti</span>
-            <h2 class="section-title">Meet the Artists</h2>
-            <p class="section-subtitle">Each hand in our atelier has been trained in the old ways — with patience, precision, and a great deal of love.</p>
-            <div class="filigree">
-                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-                    <path d="M20,5 Q30,15 20,20 Q10,15 20,5 M20,35 Q30,25 20,20 Q10,25 20,35"/>
-                    <circle cx="20" cy="20" r="2" fill="currentColor"/>
-                </svg>
-            </div>
-        </div>
-
-        <div class="artists-line">
-            <div class="artist-card">
-                <div class="cameo">
-                    <img src="pexels-alinaskazka-15507420.jpg" alt="Rosavelle" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
+            <div class="section-container" style="padding: 0;">
+                <div class="section-header">
+                    <span class="section-eyebrow">Benvenuti, cari</span>
+                    <h2 class="section-title">The Atelier</h2>
+                    <div class="filigree">
+                        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M20,5 Q30,15 20,20 Q10,15 20,5 M20,35 Q30,25 20,20 Q10,25 20,35 M5,20 Q15,10 20,20 Q15,30 5,20 M35,20 Q25,10 20,20 Q25,30 35,20"/>
+                            <circle cx="20" cy="20" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
                 </div>
-                <h3 class="artist-name">Rosavelle</h3>
-                <p class="artist-role">Fondatrice</p>
-                <p class="artist-bio">Forty years of mastery in the art of beauty.</p>
-            </div>
 
-            <div class="artist-card">
-                <div class="cameo">
-                    <img src="engin-akyurt-SMwCQZWayj0-unsplash.jpg" alt="Celeste" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#b8924a)'">
+                <div class="atelier-grid">
+                    <div class="atelier-image">
+                        <img src="sunriseforever-beauty-salon-4043096_1920.jpg" alt="Maison Rosavelle interior" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
+                    </div>
+                    <div class="atelier-text">
+                        <span class="script-title">Una piccola storia...</span>
+                        <h2>Where beauty becomes <em>art</em>.</h2>
+                        <p>
+                            Nestled in the heart of Milano, Maison Rosavelle has welcomed distinguished ladies and gentlemen 
+                            for over four decades. Our atelier is a sanctuary — velvet chairs, gilded mirrors, and the soft 
+                            scent of rosewater lingering in the air.
+                        </p>
+                        <p>
+                            Here, every treatment is a ritual. Every client, a muse. We believe beauty is not made in haste, 
+                            but coaxed slowly — like a sonnet, like a symphony, like a perfectly tailored suit from the 
+                            Quadrilatero della Moda.
+                        </p>
+                        <p style="color: var(--gold-dark); font-style: italic; font-size: 1.2rem;">
+                            "One does not simply visit Maison Rosavelle. One <em>arrives</em>."
+                        </p>
+                        <div class="signature">— Rosavelle, Fondatrice</div>
+                    </div>
                 </div>
-                <h3 class="artist-name">Celeste</h3>
-                <p class="artist-role">Master Colorist</p>
-                <p class="artist-bio">A painter who found her canvas in hair.</p>
-            </div>
-
-            <div class="artist-card">
-                <div class="cameo">
-                    <img src="ionela-mat-lps3FolQ6Ro-unsplash.jpg" alt="Isolde" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
-                </div>
-                <h3 class="artist-name">Isolde</h3>
-                <p class="artist-role">Estetista</p>
-                <p class="artist-bio">Her facials are whispered to turn back time.</p>
-            </div>
-
-            <div class="artist-card">
-                <div class="cameo">
-                    <img src="kimia-kazemi-RbIcMsh0NSk-unsplash.jpg" alt="Vivienne" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#b8924a)'">
-                </div>
-                <h3 class="artist-name">Vivienne</h3>
-                <p class="artist-role">Make-up Artist</p>
-                <p class="artist-bio">Sculpts faces like a Renaissance master.</p>
-            </div>
-
-            <div class="artist-card">
-                <div class="cameo">
-                    <img src="lindsay-cash-Md_DhaFsnCQ-unsplash.jpg" alt="Giulia" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
-                </div>
-                <h3 class="artist-name">Giulia</h3>
-                <p class="artist-role">Nail Artist</p>
-                <p class="artist-bio">Tiny brushes, steady hands, pure elegance.</p>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <!-- ============================================
-     GALLERY — Editorial movement
+     SERVICES — Framed light section
      ============================================ -->
-<section class="gallery reveal" id="gallery">
-    <div class="section-container">
-        <div class="section-header">
-            <span class="section-eyebrow">La galleria</span>
-            <h2 class="section-title">Moments of Beauty</h2>
-            <p class="section-subtitle">A glimpse into the world of Maison Rosavelle — where every visit is a small celebration.</p>
-            <div class="filigree">
-                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-                    <path d="M20,5 Q30,15 20,20 Q10,15 20,5 M20,35 Q30,25 20,20 Q10,25 20,35"/>
-                    <circle cx="20" cy="20" r="2" fill="currentColor"/>
-                </svg>
-            </div>
-        </div>
+<div class="framed-section reveal" id="services">
+    <div class="frame-container">
+        <div class="frame-corners">
+            <span class="corner-ornament top-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament top-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
 
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="pexels-leeloothefirst-4677849.jpg" alt="Salon" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">L'Atelier</span>
-            </div>
-            <div class="gallery-item">
-                <img src="le-petit-Jp4POW00eE0-unsplash.jpg" alt="Beauty" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Bellezza</span>
-            </div>
-            <div class="gallery-item">
-                <img src="pexels-cottonbro-3993444.jpg" alt="Treatment" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Trattamento</span>
-            </div>
-            <div class="gallery-item">
-                <img src="farhad-ibrahimzade-V2HDOQTJh3o-unsplash.jpg" alt="Makeup" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Trucco</span>
-            </div>
-            <div class="gallery-item">
-                <img src="pexels-rebornfilmes-29648642.jpg" alt="Hair" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Capelli</span>
-            </div>
-            <div class="gallery-item">
-                <img src="pexels-gustavo-fring-7446911.jpg" alt="Salon" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Dettagli</span>
-            </div>
-            <div class="gallery-item">
-                <img src="pexels-gustavo-fring-7446920.jpg" alt="Beauty" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Eleganza</span>
-            </div>
-            <div class="gallery-item">
-                <img src="pexels-loullon-ph-2152995465-32713264.jpg" alt="Interior" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Interiors</span>
-            </div>
-            <div class="gallery-item">
-                <img src="pexels-ron-lach-10317443.jpg" alt="Nails" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Unghie</span>
-            </div>
-            <div class="gallery-item">
-                <img src="giorgio-trovato-gb6gtiTZKB8-unsplash.jpg" alt="Salon" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Atmosfera</span>
-            </div>
-            <div class="gallery-item">
-                <img src="vutuan09hp-wedding-6539887_1920.jpg" alt="Bridal" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Sposa</span>
-            </div>
-            <div class="gallery-item">
-                <img src="sunriseforever-beauty-salon-4043096_1920.jpg" alt="Beauty" onerror="this.style.background='#e8d9b4'">
-                <span class="gallery-caption">Rituale</span>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="section-container" style="padding: 0;">
+                <div class="services-intro">
+                    <span class="section-eyebrow">I nostri servizi</span>
+                    <h2 class="section-title">Services &amp; Tariff</h2>
+                    <p class="section-subtitle">Six rituals of beauty — each one a small ceremony, performed with devotion.</p>
+                    <div class="filigree">
+                        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M20,5 Q30,15 20,20 Q10,15 20,5 M20,35 Q30,25 20,20 Q10,25 20,35"/>
+                            <circle cx="20" cy="20" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
 
-<!-- ============================================
-     TESTIMONIALS
-     ============================================ -->
-<section class="testimonials reveal">
-    <div class="section-container">
-        <div class="section-header">
-            <span class="section-eyebrow">Parole gentili</span>
-            <h2 class="section-title">Letters from our Ladies</h2>
-            <div class="filigree">
-                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
-                    <path d="M20,5 Q30,15 20,20 Q10,15 20,5 M20,35 Q30,25 20,20 Q10,25 20,35"/>
-                    <circle cx="20" cy="20" r="2" fill="currentColor"/>
-                </svg>
-            </div>
-        </div>
-
-        <div class="testimonials-grid">
-            <div class="note">
-                <div class="note-stars">★★★★★</div>
-                <p class="note-text">I arrived a frazzled thing and left feeling like the heroine of my own novel. Celeste's balayage is nothing short of sorcery.</p>
-                <p class="note-author">— Lady Henrietta W.</p>
-            </div>
-            <div class="note">
-                <div class="note-stars">★★★★★</div>
-                <p class="note-text">The anti-aging facial was a dream. I fell asleep, woke up glowing, and was offered prosecco. Eleven out of ten, darling.</p>
-                <p class="note-author">— Miss Amélie R.</p>
-            </div>
-            <div class="note">
-                <div class="note-stars">★★★★★</div>
-                <p class="note-text">Maison Rosavelle is not a salon — it is a sanctuary. Rosavelle herself styled my wedding hair. I wept. Beautifully.</p>
-                <p class="note-author">— Mrs. Charlotte D.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================
-     BOOKING — Refined Interaction
-     ============================================ -->
-<section class="booking reveal" id="booking">
-    <div class="section-container">
-        <div class="section-header">
-            <span class="section-eyebrow">Appuntamento</span>
-            <h2 class="section-title">Reserve Your Appointment</h2>
-            <p class="section-subtitle">Select your services, choose a moment, and leave the rest to us. We shall prepare everything with care.</p>
-        </div>
-
-        <div class="booking-layout">
-            <!-- Booking Form -->
-            <div class="booking-form">
-                <div class="form-section">
-                    <h4>Your Details</h4>
-                    <div class="form-row">
-                        <div class="form-field">
-                            <label for="clientName">Name</label>
-                            <input type="text" id="clientName" placeholder="Your full name">
+                <!-- 1. HAIR -->
+                <div class="service-section">
+                    <div class="service-editorial">
+                        <div class="service-image-wrap">
+                            <img src="lindsay-cash-Md_DhaFsnCQ-unsplash.jpg" alt="Hair services" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
+                            <span class="number">01</span>
+                            <span class="category-label">Capelli</span>
                         </div>
-                        <div class="form-field">
-                            <label for="clientPhone">Phone</label>
-                            <input type="tel" id="clientPhone" placeholder="+39 ...">
+                        <div class="service-text">
+                            <span class="service-eyebrow">— Chapter One</span>
+                            <h3>Women's Hair</h3>
+                            <span class="it-name">Capelli Donna</span>
+                            <p class="description">From the first snip of the scissors to the final sweep of the brush, our hair rituals are performed with the patience of artisans and the eye of poets.</p>
+                            <ul class="service-list">
+                                <li><span class="name">Women's haircut <span class="it">— Taglio donna</span></span><span class="price">€35</span></li>
+                                <li><span class="name">Wash &amp; blow-dry <span class="it">— Shampoo e piega</span></span><span class="price">€25</span></li>
+                                <li><span class="name">Curls / waves styling <span class="it">— Acconciatura onde</span></span><span class="price">€40</span></li>
+                                <li><span class="name">Root coloring <span class="it">— Colore ricrescita</span></span><span class="price">€40</span></li>
+                                <li><span class="name">Full hair coloring <span class="it">— Colore completo</span></span><span class="price">€65</span></li>
+                                <li><span class="name">Balayage <span class="it">— Balayage</span></span><span class="price">€120</span></li>
+                                <li><span class="name">Deep conditioning <span class="it">— Maschera ristrutturante</span></span><span class="price">€20</span></li>
+                                <li><span class="name">Bond repair <span class="it">— Trattamento ricostruzione</span></span><span class="price">€40</span></li>
+                                <li><span class="name">Keratin smoothing <span class="it">— Cheratina</span></span><span class="price">€180</span></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="form-field">
-                        <label for="clientEmail">Email</label>
-                        <input type="email" id="clientEmail" placeholder="your@email.com">
+                </div>
+
+                <!-- 2. MAKEUP -->
+                <div class="service-section">
+                    <div class="service-editorial">
+                        <div class="service-image-wrap">
+                            <img src="pexels-gustavo-fring-7446911.jpg" alt="Makeup services" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
+                            <span class="number">02</span>
+                            <span class="category-label">Make-up</span>
+                        </div>
+                        <div class="service-text">
+                            <span class="service-eyebrow">— Chapter Two</span>
+                            <h3>Make-up</h3>
+                            <span class="it-name">L'Arte del Trucco</span>
+                            <p class="description">A brush, a palette, and the quiet confidence of a woman about to step into her own story. Our artists paint with light, shadow, and a little bit of magic.</p>
+                            <ul class="service-list">
+                                <li><span class="name">Day makeup <span class="it">— Trucco giorno</span></span><span class="price">€40</span></li>
+                                <li><span class="name">Evening makeup <span class="it">— Trucco sera</span></span><span class="price">€60</span></li>
+                                <li><span class="name">Bridal makeup <span class="it">— Trucco sposa</span></span><span class="price">€180</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-section">
-                    <h4>Preferred Date</h4>
-                    <div class="form-field">
-                        <input type="date" id="appointmentDate">
+                <!-- 3. NAILS -->
+                <div class="service-section">
+                    <div class="service-editorial">
+                        <div class="service-image-wrap">
+                            <img src="giorgio-trovato-gb6gtiTZKB8-unsplash.jpg" alt="Nail services" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
+                            <span class="number">03</span>
+                            <span class="category-label">Unghie</span>
+                        </div>
+                        <div class="service-text">
+                            <span class="service-eyebrow">— Chapter Three</span>
+                            <h3>Nails</h3>
+                            <span class="it-name">Unghie</span>
+                            <p class="description">Tiny canvases, steady hands, and the most delicate finishes. Our nail artists treat each fingertip as a small work of art — because, in a way, it is.</p>
+                            <ul class="service-list">
+                                <li><span class="name">Classic manicure <span class="it">— Manicure classica</span></span><span class="price">€20</span></li>
+                                <li><span class="name">Semi-permanent manicure <span class="it">— Semipermanente</span></span><span class="price">€35</span></li>
+                                <li><span class="name">Gel nail extensions <span class="it">— Ricostruzione in gel</span></span><span class="price">€65</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-section">
-                    <h4>Preferred Time</h4>
-                    <div class="time-slots" id="timeSlots">
-                        <div class="time-slot" data-time="10:00">10:00</div>
-                        <div class="time-slot" data-time="11:00">11:00</div>
-                        <div class="time-slot" data-time="12:00">12:00</div>
-                        <div class="time-slot unavailable" data-time="13:00">13:00</div>
-                        <div class="time-slot" data-time="14:00">14:00</div>
-                        <div class="time-slot" data-time="15:00">15:00</div>
-                        <div class="time-slot unavailable" data-time="16:00">16:00</div>
-                        <div class="time-slot" data-time="17:00">17:00</div>
-                        <div class="time-slot" data-time="18:00">18:00</div>
+                <!-- 4. BROWS & LASHES -->
+                <div class="service-section">
+                    <div class="service-editorial">
+                        <div class="service-image-wrap">
+                            <img src="le-petit-Jp4POW00eE0-unsplash.jpg" alt="Brows and lashes" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
+                            <span class="number">04</span>
+                            <span class="category-label">Sopracciglia</span>
+                        </div>
+                        <div class="service-text">
+                            <span class="service-eyebrow">— Chapter Four</span>
+                            <h3>Eyebrows &amp; Eyelashes</h3>
+                            <span class="it-name">Sopracciglia e Ciglia</span>
+                            <p class="description">The frame of the face, the flutter of a glance — these small details speak volumes. We shape, lift, and define with the precision of a calligrapher.</p>
+                            <ul class="service-list">
+                                <li><span class="name">Eyebrow shaping <span class="it">— Forma sopracciglia</span></span><span class="price">€15</span></li>
+                                <li><span class="name">Brow lamination <span class="it">— Laminazione sopracciglia</span></span><span class="price">€50</span></li>
+                                <li><span class="name">Lash lift <span class="it">— Laminazione ciglia</span></span><span class="price">€50</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-section">
-                    <h4>Special Requests</h4>
-                    <div class="form-field">
-                        <textarea id="clientNotes" placeholder="Any preferences, allergies, or notes for our artists..."></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Summary -->
-            <div class="booking-summary">
-                <h3>La Vostra Selezione</h3>
-                <ul class="summary-list" id="summaryList">
-                    <li class="empty">No services selected yet, cara...</li>
-                </ul>
-                <div class="summary-meta">
-                    <span>Duration: <strong id="totalDuration">0 min</strong></span>
-                    <span>Services: <strong id="serviceCount">0</strong></span>
-                </div>
-
-                <div class="appointment-details" id="appointmentDetails" style="display: none;">
-                    <div class="detail-row">
-                        <span class="detail-label">Date</span>
-                        <span class="detail-value" id="summaryDate">—</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Time</span>
-                        <span class="detail-value" id="summaryTime">—</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Guest</span>
-                        <span class="detail-value" id="summaryName">—</span>
+                <!-- 5. FACIAL SKINCARE -->
+                <div class="service-section">
+                    <div class="service-editorial">
+                        <div class="service-image-wrap">
+                            <img src="kimia-kazemi-RbIcMsh0NSk-unsplash.jpg" alt="Facial skincare" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
+                            <span class="number">05</span>
+                            <span class="category-label">Viso</span>
+                        </div>
+                        <div class="service-text">
+                            <span class="service-eyebrow">— Chapter Five</span>
+                            <h3>Facial Skincare</h3>
+                            <span class="it-name">Trattamenti Viso</span>
+                            <p class="description">A ritual as old as the Renaissance itself — cleanse, nourish, restore. Our facials are whispered to turn back time by a decade. Perhaps two.</p>
+                            <ul class="service-list">
+                                <li><span class="name">Deep facial cleansing <span class="it">— Pulizia viso profonda</span></span><span class="price">€55</span></li>
+                                <li><span class="name">Hydrating facial <span class="it">— Trattamento idratante</span></span><span class="price">€60</span></li>
+                                <li><span class="name">Anti-aging facial <span class="it">— Trattamento anti-età</span></span><span class="price">€85</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="summary-total">
-                    <span class="label">Total</span>
-                    <span class="amount">€<span id="totalPrice">0</span></span>
+                <!-- 6. MASSAGE & BODY -->
+                <div class="service-section">
+                    <div class="service-editorial">
+                        <div class="service-image-wrap">
+                            <img src="engin-akyurt-SMwCQZWayj0-unsplash.jpg" alt="Massage and body" onerror="this.style.background='linear-gradient(135deg,#e8d9b4,#d4af37)'">
+                            <span class="number">06</span>
+                            <span class="category-label">Corpo</span>
+                        </div>
+                        <div class="service-text">
+                            <span class="service-eyebrow">— Chapter Six</span>
+                            <h3>Massage &amp; Body</h3>
+                            <span class="it-name">Massaggi e Corpo</span>
+                            <p class="description">The body remembers. Let our therapists release what the day has stored — tension, fatigue, the quiet weight of being. You will leave lighter.</p>
+                            <ul class="service-list">
+                                <li><span class="name">Relaxation massage, 30 min <span class="it">— Massaggio rilassante</span></span><span class="price">€40</span></li>
+                                <li><span class="name">Full-body massage, 60 min <span class="it">— Massaggio completo</span></span><span class="price">€70</span></li>
+                                <li><span class="name">Body scrub <span class="it">— Scrub corpo</span></span><span class="price">€45</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-
-                <a href="#" class="whatsapp-btn" id="whatsappBtn" onclick="confirmBooking(event)">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Confirm &amp; Reserve
-                </a>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <!-- ============================================
-     VISIT US
+     MEET THE ARTISTS — Framed light section
+     ============================================ -->
+<div class="framed-section reveal" id="artists">
+    <div class="frame-container">
+        <div class="frame-corners">
+            <span class="corner-ornament top-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament top-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+
+            <div class="section-container" style="padding: 0;">
+                <div class="section-header">
+                    <span class="section-eyebrow">I nostri artisti</span>
+                    <h2 class="section-title">Meet the Artists</h2>
+                    <p class="section-subtitle">Each hand in our atelier has been trained in the old ways — with patience, precision, and a great deal of love.</p>
+                    <div class="filigree">
+                        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M20,5 Q30,15 20,20 Q10,15 20,5 M20,35 Q30,25 20,20 Q10,25 20,35"/>
+                            <circle cx="20" cy="20" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="artists-line">
+                    <div class="artist-card">
+                        <div class="cameo">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs><radialGradient id="g1" cx="50%" cy="40%"><stop offset="0%" stop-color="#f5e8c4"/><stop offset="100%" stop-color="#b8924a"/></radialGradient></defs>
+                                <rect width="200" height="200" fill="url(#g1)"/>
+                                <ellipse cx="100" cy="75" rx="28" ry="32" fill="#1c1c1c" opacity="0.85"/>
+                                <path d="M60,180 Q60,120 100,115 Q140,120 140,180 Z" fill="#1c1c1c" opacity="0.85"/>
+                                <path d="M72,60 Q100,30 128,60 Q130,75 125,85 Q100,70 75,85 Q70,75 72,60 Z" fill="#8a8a8a"/>
+                                <text x="100" y="195" text-anchor="middle" font-family="Pinyon Script, serif" font-size="14" fill="#f5e8c4" opacity="0.6">R</text>
+                            </svg>
+                        </div>
+                        <h3 class="artist-name">Rosavelle</h3>
+                        <p class="artist-role">Fondatrice</p>
+                        <p class="artist-bio">Forty years of mastery in the art of beauty.</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <div class="cameo">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs><radialGradient id="g2" cx="50%" cy="40%"><stop offset="0%" stop-color="#f5e8c4"/><stop offset="100%" stop-color="#b8924a"/></radialGradient></defs>
+                                <rect width="200" height="200" fill="url(#g2)"/>
+                                <ellipse cx="100" cy="75" rx="28" ry="32" fill="#1c1c1c" opacity="0.85"/>
+                                <path d="M60,180 Q60,120 100,115 Q140,120 140,180 Z" fill="#1c1c1c" opacity="0.85"/>
+                                <path d="M68,65 Q80,40 100,38 Q120,40 132,65 Q135,95 125,110 Q100,95 75,110 Q65,95 68,65 Z" fill="#8b4513"/>
+                                <text x="100" y="195" text-anchor="middle" font-family="Pinyon Script, serif" font-size="14" fill="#f5e8c4" opacity="0.6">C</text>
+                            </svg>
+                        </div>
+                        <h3 class="artist-name">Celeste</h3>
+                        <p class="artist-role">Master Colorist</p>
+                        <p class="artist-bio">A painter who found her canvas in hair.</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <div class="cameo">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs><radialGradient id="g3" cx="50%" cy="40%"><stop offset="0%" stop-color="#f5e8c4"/><stop offset="100%" stop-color="#b8924a"/></radialGradient></defs>
+                                <rect width="200" height="200" fill="url(#g3)"/>
+                                <ellipse cx="100" cy="75" rx="28" ry="32" fill="#1c1c1c" opacity="0.85"/>
+                                <path d="M60,180 Q60,120 100,115 Q140,120 140,180 Z" fill="#faf6ec" opacity="0.95"/>
+                                <path d="M70,55 Q100,35 130,55 Q132,70 128,80 Q100,65 72,80 Q68,70 70,55 Z" fill="#e8c978"/>
+                                <text x="100" y="195" text-anchor="middle" font-family="Pinyon Script, serif" font-size="14" fill="#f5e8c4" opacity="0.6">I</text>
+                            </svg>
+                        </div>
+                        <h3 class="artist-name">Isolde</h3>
+                        <p class="artist-role">Estetista</p>
+                        <p class="artist-bio">Her facials are whispered to turn back time.</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <div class="cameo">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs><radialGradient id="g4" cx="50%" cy="40%"><stop offset="0%" stop-color="#f5e8c4"/><stop offset="100%" stop-color="#b8924a"/></radialGradient></defs>
+                                <rect width="200" height="200" fill="url(#g4)"/>
+                                <ellipse cx="100" cy="75" rx="28" ry="32" fill="#1c1c1c" opacity="0.85"/>
+                                <path d="M60,180 Q60,120 100,115 Q140,120 140,180 Z" fill="#1c1c1c" opacity="0.85"/>
+                                <path d="M70,60 Q85,40 100,38 Q115,40 130,60 Q132,85 128,100 Q100,85 72,100 Q68,85 70,60 Z" fill="#2a1810"/>
+                                <text x="100" y="195" text-anchor="middle" font-family="Pinyon Script, serif" font-size="14" fill="#f5e8c4" opacity="0.6">V</text>
+                            </svg>
+                        </div>
+                        <h3 class="artist-name">Vivienne</h3>
+                        <p class="artist-role">Make-up Artist</p>
+                        <p class="artist-bio">Sculpts faces like a Renaissance master.</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <div class="cameo">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs><radialGradient id="g5" cx="50%" cy="40%"><stop offset="0%" stop-color="#f5e8c4"/><stop offset="100%" stop-color="#b8924a"/></radialGradient></defs>
+                                <rect width="200" height="200" fill="url(#g5)"/>
+                                <ellipse cx="100" cy="75" rx="28" ry="32" fill="#1c1c1c" opacity="0.85"/>
+                                <path d="M60,180 Q60,120 100,115 Q140,120 140,180 Z" fill="#faf6ec" opacity="0.95"/>
+                                <path d="M72,50 Q100,35 128,50 Q130,70 125,85 Q100,70 75,85 Q70,70 72,50 Z" fill="#d4a5a5"/>
+                                <text x="100" y="195" text-anchor="middle" font-family="Pinyon Script, serif" font-size="14" fill="#f5e8c4" opacity="0.6">G</text>
+                            </svg>
+                        </div>
+                        <h3 class="artist-name">Giulia</h3>
+                        <p class="artist-role">Nail Artist</p>
+                        <p class="artist-bio">Tiny brushes, steady hands, pure elegance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     GALLERY — Framed light section
+     ============================================ -->
+<div class="framed-section reveal" id="gallery">
+    <div class="frame-container">
+        <div class="frame-corners">
+            <span class="corner-ornament top-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament top-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+
+            <div class="section-container" style="padding: 0;">
+                <div class="section-header">
+                    <span class="section-eyebrow">La galleria</span>
+                    <h2 class="section-title">Moments of Beauty</h2>
+                    <p class="section-subtitle">A glimpse into the world of Maison Rosavelle — where every visit is a small celebration.</p>
+                    <div class="filigree">
+                        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M20,5 Q30,15 20,20 Q10,15 20,5 M20,35 Q30,25 20,20 Q10,25 20,35"/>
+                            <circle cx="20" cy="20" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="sunriseforever-beauty-salon-4043096_1920.jpg" alt="Beauty salon" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">L'Atelier</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="le-petit-Jp4POW00eE0-unsplash.jpg" alt="Beauty" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">Bellezza</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="pexels-cottonbro-3993444.jpg" alt="Treatment" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">Trattamento</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="farhad-ibrahimzade-V2HDOQTJh3o-unsplash.jpg" alt="Makeup" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">Trucco</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="pexels-rebornfilmes-29648642.jpg" alt="Hair" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">Capelli</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="pexels-gustavo-fring-7446911.jpg" alt="Salon" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">Dettagli</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="pexels-gustavo-fring-7446920.jpg" alt="Beauty" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">Eleganza</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="pexels-loullon-ph-2152995465-32713264.jpg" alt="Interior" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">Interiors</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="pexels-ron-lach-10317443.jpg" alt="Nails" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">Unghie</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="giorgio-trovato-gb6gtiTZKB8-unsplash.jpg" alt="Salon" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">Atmosfera</span>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="vutuan09hp-wedding-6539887_1920.jpg" alt="Bridal" onerror="this.style.background='#e8d9b4'">
+                        <span class="gallery-caption">Sposa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     TESTIMONIALS — Framed light section
+     ============================================ -->
+<div class="framed-section reveal">
+    <div class="frame-container">
+        <div class="frame-corners">
+            <span class="corner-ornament top-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament top-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+
+            <div class="section-container" style="padding: 0;">
+                <div class="section-header">
+                    <span class="section-eyebrow">Parole gentili</span>
+                    <h2 class="section-title">Letters from our Ladies</h2>
+                    <div class="filigree">
+                        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M20,5 Q30,15 20,20 Q10,15 20,5 M20,35 Q30,25 20,20 Q10,25 20,35"/>
+                            <circle cx="20" cy="20" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="note">
+                        <div class="note-stars">★★★★★</div>
+                        <p class="note-text">I arrived a frazzled thing and left feeling like the heroine of my own novel. Celeste's balayage is nothing short of sorcery.</p>
+                        <p class="note-author">— Lady Henrietta W.</p>
+                    </div>
+                    <div class="note">
+                        <div class="note-stars">★★★★★</div>
+                        <p class="note-text">The anti-aging facial was a dream. I fell asleep, woke up glowing, and was offered prosecco. Eleven out of ten, darling.</p>
+                        <p class="note-author">— Miss Amélie R.</p>
+                    </div>
+                    <div class="note">
+                        <div class="note-stars">★★★★★</div>
+                        <p class="note-text">Maison Rosavelle is not a salon — it is a sanctuary. Rosavelle herself styled my wedding hair. I wept. Beautifully.</p>
+                        <p class="note-author">— Mrs. Charlotte D.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     BOOKING — Framed light section
+     ============================================ -->
+<div class="framed-section reveal" id="booking">
+    <div class="frame-container">
+        <div class="frame-corners">
+            <span class="corner-ornament top-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament top-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-left"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+            <span class="corner-ornament bottom-right"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5,5 L35,5 M5,5 L5,35"/><path d="M5,5 Q20,20 35,5 M5,5 Q20,20 5,35"/><circle cx="5" cy="5" r="2.5" fill="currentColor"/></svg></span>
+
+            <div class="section-container" style="padding: 0;">
+                <div class="section-header">
+                    <span class="section-eyebrow">Appuntamento</span>
+                    <h2 class="section-title">Reserve Your Appointment</h2>
+                    <p class="section-subtitle">Select your services, choose a moment, and leave the rest to us. We shall prepare everything with care.</p>
+                </div>
+
+                <div class="booking-layout">
+                    <div class="booking-form">
+                        <div class="form-section">
+                            <h4>Your Details</h4>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="clientName">Name</label>
+                                    <input type="text" id="clientName" placeholder="Your full name">
+                                </div>
+                                <div class="form-field">
+                                    <label for="clientPhone">Phone</label>
+                                    <input type="tel" id="clientPhone" placeholder="+39 ...">
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="clientEmail">Email</label>
+                                <input type="email" id="clientEmail" placeholder="your@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Preferred Date</h4>
+                            <div class="form-field">
+                                <input type="date" id="appointmentDate">
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Preferred Time</h4>
+                            <div class="time-slots" id="timeSlots">
+                                <div class="time-slot" data-time="10:00">10:00</div>
+                                <div class="time-slot" data-time="11:00">11:00</div>
+                                <div class="time-slot" data-time="12:00">12:00</div>
+                                <div class="time-slot unavailable" data-time="13:00">13:00</div>
+                                <div class="time-slot" data-time="14:00">14:00</div>
+                                <div class="time-slot" data-time="15:00">15:00</div>
+                                <div class="time-slot unavailable" data-time="16:00">16:00</div>
+                                <div class="time-slot" data-time="17:00">17:00</div>
+                                <div class="time-slot" data-time="18:00">18:00</div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h4>Special Requests</h4>
+                            <div class="form-field">
+                                <textarea id="clientNotes" placeholder="Any preferences, allergies, or notes for our artists..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="booking-summary">
+                        <h3>La Vostra Selezione</h3>
+                        <ul class="summary-list" id="summaryList">
+                            <li class="empty">No services selected yet, cara...</li>
+                        </ul>
+                        <div class="summary-meta">
+                            <span>Duration: <strong id="totalDuration">0 min</strong></span>
+                            <span>Services: <strong id="serviceCount">0</strong></span>
+                        </div>
+
+                        <div class="appointment-details" id="appointmentDetails" style="display: none;">
+                            <div class="detail-row">
+                                <span class="detail-label">Date</span>
+                                <span class="detail-value" id="summaryDate">—</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Time</span>
+                                <span class="detail-value" id="summaryTime">—</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Guest</span>
+                                <span class="detail-value" id="summaryName">—</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-total">
+                            <span class="label">Total</span>
+                            <span class="amount">€<span id="totalPrice">0</span></span>
+                        </div>
+
+                        <a href="#" class="whatsapp-btn" id="whatsappBtn" onclick="confirmBooking(event)">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Confirm &amp; Reserve
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     VISIT US — Dark section (no frame needed)
      ============================================ -->
 <section class="visit reveal">
     <div class="section-container">
@@ -2163,23 +2284,20 @@ footer {
 
 <script>
 /* ============================================
-   SCROLL REVEAL — Editorial movement
+   SCROLL REVEAL
    ============================================ */
 const revealElements = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
 
 revealElements.forEach(el => revealObserver.observe(el));
 
 /* ============================================
-   SERVICE PICKER — from all service sections
+   SERVICE PICKER
    ============================================ */
-// Build service checkboxes dynamically from service lists
 const serviceLists = document.querySelectorAll('.service-list');
 serviceLists.forEach(list => {
     list.querySelectorAll('li').forEach(li => {
@@ -2190,7 +2308,6 @@ serviceLists.forEach(list => {
         const name = nameEl.textContent.trim().replace(/\s*—\s*/g, ' — ');
         const price = parseInt(priceEl.textContent.replace('€', ''));
 
-        // Wrap in label with checkbox
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.dataset.name = name;
@@ -2267,12 +2384,11 @@ timeSlots.forEach(slot => {
 });
 
 /* ============================================
-   APPOINTMENT DETAILS — live summary
+   APPOINTMENT DETAILS
    ============================================ */
 const dateInput = document.getElementById('appointmentDate');
 const nameInput = document.getElementById('clientName');
 
-// Set min date to today
 const today = new Date().toISOString().split('T')[0];
 dateInput.min = today;
 
@@ -2375,7 +2491,6 @@ function updateStatus() {
 updateStatus();
 setInterval(updateStatus, 60000);
 
-/* Close modal on overlay click */
 document.getElementById('confirmModal').addEventListener('click', (e) => {
     if (e.target.id === 'confirmModal') closeModal();
 });
@@ -2383,4 +2498,3 @@ document.getElementById('confirmModal').addEventListener('click', (e) => {
 
 </body>
 </html>
-
